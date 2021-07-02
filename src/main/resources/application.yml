@@ -6,11 +6,13 @@ spring:
     driver-class-name: org.h2.Driver
 
   jpa:
-    hibernate:
-      ddl-auto: create
     properties:
       hibernate:
         format_sql: true
+#       default_batch_fetch_size 애매하면 500 두고 쓰면된다
+        default_batch_fetch_size: 500
+    hibernate:
+      ddl-auto: create
 
 logging.level:
   org.hibernate.SQL: debug
